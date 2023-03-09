@@ -117,11 +117,18 @@ export const deleteCategory = (id) => async (dispatch, getState) => {
 };
 
 // Edit category
-export const editCategory = (id) => async (dispatch) => {
+export const editCategory = (id) => async (dispatch, getState) => {
   try {
     dispatch({ type: CATEGORY_EDIT_REQUEST });
-    const { data } = await axios.get(`/api/categories/${id}`);
+    const {
+      userLogin: { userInfo },
+    } = getState();
+    const config = {
+      headers: { Authorization: `Bearer ${userInfo.token}` },
+    };
+    const { data } = await axios.get(`/api/categories/${id}`, config);
     dispatch({ type: CATEGORY_EDIT_SUCCESS, payload: data });
+    console.log(data)
   } catch (error) {
     const message =
       error.response && error.response.data.message

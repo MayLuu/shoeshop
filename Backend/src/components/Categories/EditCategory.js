@@ -47,6 +47,8 @@ const EditCategory = (props) => {
       dispatch({ type: CATEGORY_UPDATE_RESET });
       toast.success("Category Updated", ToastObject);
     } else {
+      console.log('inside edit');
+      console.log(categoryEdit)
       if (!category.name || category._id !== categoryId) {
         dispatch(editCategory(categoryId));
       } else {
