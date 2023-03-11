@@ -19,7 +19,10 @@ const Product = (props) => {
   return (
     <>
       <div className="col-md-6 col-sm-6 col-lg-3 mb-5">
-        <div className="card card-product-grid shadow-sm">
+        <div className="card card-product-grid shadow-sm shoe-card">
+          <div className="info-wrap img-wrap-title">
+            <b></b>
+          </div>
           <Link to="#" className="img-wrap">
             <img src={product.image?.url} alt="Product" />
           </Link>

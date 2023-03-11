@@ -95,7 +95,7 @@ const MainProducts = () => {
       <div className="content-header">
         <h2 className="content-title">Products</h2>
         <div>
-          <Link to="/addproduct" className="btn btn-primary">
+          <Link to="/addproduct" className="btn btn-add">
             Create new
           </Link>
         </div>
@@ -108,7 +108,8 @@ const MainProducts = () => {
               <input
                 type="search"
                 placeholder="Search..."
-                className="form-control p-2"
+                className="form-control search-control p-2"
+
                 onChange={(e) => setSearchProduct(e.target.value)}
               />
             </div>

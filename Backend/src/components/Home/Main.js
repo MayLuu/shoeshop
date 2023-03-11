@@ -14,7 +14,9 @@ const Main = () => {
 
   return (
     <>
+
       <section className="content-main">
+
         <div className="content-header">
           <h2 className="content-title"> Dashboard </h2>
         </div>
