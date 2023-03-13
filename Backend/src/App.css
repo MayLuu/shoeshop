@@ -1,4 +1,4 @@
-@charset "UTF-8";
+/* @charset "UTF-8";
 /* ==== CUSTOM UI ELEMENTS AND STYLES ====*/
 /* ========================
 INCLUDE STYLES AND COMPONENTS
@@ -22,6 +22,7 @@ body{
   font-family: 'Poppins', sans-serif;
 
 }
+
 .table thead th {
   color: #adb5bd;
   font-weight: 400;
@@ -1045,4 +1046,14 @@ ul.row-sm {
 }
 .search-control{
   border-radius: 50px;
+}
+
+/* sidebar  */
+.web-name{
+  color: white;
+}
+.brand-wrap{
+  text-decoration: none;
+  font-weight: 700;
+  font-size: large;
 }

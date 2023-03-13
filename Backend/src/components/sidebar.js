@@ -14,7 +14,10 @@ const Sidebar = () => {
               className="logo"
               alt="Ecommerce dashboard template"
             />
+            <span className="web-name">SNEAK3R</span>
+
           </Link>
+
           <div>
             <button className="btn btn-icon btn-aside-minimize">
               <i className="text-muted fas fa-bars"></i>

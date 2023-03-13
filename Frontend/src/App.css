@@ -764,3 +764,6 @@ textarea:focus {
   outline   : none !important;
   box-shadow: none;
 }
+.navbar-brand{
+  color: #000000 !important;
+}
