@@ -35,7 +35,8 @@ const Header = () => {
 
   return (
     <header className="main-header navbar">
-      <div className="col-search"></div>
+      {console.log(userInfo)}
+      <div className="col-search">Welcome {userInfo.name}</div>
       <div className="col-nav">
         <button
           className="btn btn-icon btn-mobile me-auto"
@@ -44,28 +45,17 @@ const Header = () => {
           <i className="md-28 fas fa-bars"></i>
         </button>
         <ul className="nav">
-          <li className="nav-item">
-            <Link className={`nav-link btn-icon `} title="Dark mode" to="#">
-              <i className="fas fa-moon"></i>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link btn-icon" to="#">
-              <i className="fas fa-bell"></i>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link fw-bold text-dark" to="#">
-              Hi, {userInfo.name}
-            </Link>
-          </li>
+
+
           <li className="dropdown nav-item">
-            <Link className="dropdown-toggle" data-bs-toggle="dropdown" to="#">
-              <img
-                className="img-xs rounded-circle"
-                src="/images/favicon.png"
+
+            <Link className="dropdown-toggle " data-bs-toggle="dropdown" to="#">
+              {/* <img
+                className="img-xs "
+                src="../../public/images/default-avt.png"
                 alt="User"
-              />
+              /> */}
+              <i className="fas fa-user-circle avt"></i>
             </Link>
             <div className="dropdown-menu dropdown-menu-end">
               <Link className="dropdown-item" to="/">
