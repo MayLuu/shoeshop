@@ -56,6 +56,9 @@ const OrderDetailProducts = (props) => {
                 <dt>Subtotal:</dt> <dd>${order.itemsPrice}</dd>
               </dl>
               <dl className="dlist">
+                <dt>Packaging cost:</dt> <dd>${0.1 * order.itemsPrice}</dd>
+              </dl>
+              <dl className="dlist">
                 <dt>Shipping cost:</dt> <dd>${order.shippingPrice}</dd>
               </dl>
               <dl className="dlist">
