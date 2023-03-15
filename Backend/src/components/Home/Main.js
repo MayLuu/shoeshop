@@ -25,8 +25,8 @@ const Main = () => {
 
         <div className="row">
           {/* STATICS */}
-          <SaleStatistics />
-          <ProductsStatistics />
+          {/* <SaleStatistics />
+          <ProductsStatistics /> */}
         </div>
 
         {/* LATEST ORDER */}

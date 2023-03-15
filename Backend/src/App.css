@@ -1057,3 +1057,18 @@ ul.row-sm {
   font-weight: 700;
   font-size: large;
 }
+.card-user .card-header{
+  background-color: rgb(255, 249, 135) !important;
+  margin-top: 2rem;
+}
+.card-user .card-header img{
+  border: none;
+  margin-top: 10px !important;
+}
+.card-order .card-header{
+  background-color: var(--blue);
+}
+.card-info{
+  font-size: medium;
+  font-weight: bold !important;
+}

@@ -175,7 +175,7 @@ export const updateCategory = (category) => async (dispatch, getState) => {
       type: CATEGORY_UPDATE_FAIL,
       payload:
         error.response && error.response.data.message
-          ? error.response.data.message
+          ? "Duplicate category name"
           : error.message,
     });
   }

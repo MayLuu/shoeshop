@@ -17,26 +17,23 @@ const CategoriesTable = (props) => {
   };
 
   return (
-    <div className="col-md-12 col-lg-8">
+    <div className="col-md-12 col-lg-12">
+      {/* Table Data */}
+      {errorDelete && (
+
+        <Message variant="alert-danger">{errorDelete}</Message>
+
+      )}
       <table className="table">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>No</th>
             <th>Name</th>
             <th>Description</th>
             {isEdit ? "" : <th className="text-end">Action</th>}
           </tr>
         </thead>
-        {/* Table Data */}
-        {errorDelete && (
-          <tbody>
-            <tr>
-              <th colSpan={4}>
-                <Message variant="alert-danger">{errorDelete}</Message>
-              </th>
-            </tr>
-          </tbody>
-        )}
+
         {loading ? (
           <tbody>
             <tr>
@@ -55,9 +52,9 @@ const CategoriesTable = (props) => {
           </tbody>
         ) : (
           <tbody>
-            {categories.map((category) => (
+            {categories.map((category, i) => (
               <tr key={category._id}>
-                <td>{category._id}</td>
+                <td>{i + 1}</td>
                 <td>
                   <b>{category.name}</b>
                 </td>

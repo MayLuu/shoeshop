@@ -25,8 +25,11 @@ const MainCategories = () => {
       <div className="card shadow-sm">
         <div className="card-body">
           <div className="row">
-            {/* Create category */}
             <CreateCategory />
+
+          </div>
+          <div className="row">
+            {/* Create category */}
             {/* Categories table */}
             <CategoriesTable
               categories={categories}

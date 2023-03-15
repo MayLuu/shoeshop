@@ -40,13 +40,48 @@ const CreateCategory = () => {
   return (
     <>
       <Toast />
-      <div className="col-md-12 col-lg-4">
+      <div className="col-md-12 col-lg-12 d-flex justify-content-center mb-5">
         {loading ? (
           <Loading />
         ) : error ? (
-          <Message variant="alert-danger">{error}</Message>
+          <div className="col-lg-6">
+            <Message variant="alert-danger">{error}</Message>
+
+            <form onSubmit={submitHandler}>
+              <div className="mb-4">
+                <label htmlFor="product_name" className="form-label">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="Type here"
+                  className="form-control py-3"
+                  id="product_name"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div className="mb-4">
+                <label className="form-label">Description</label>
+                <textarea
+                  placeholder="Type here"
+                  className="form-control"
+                  rows="4"
+                  required
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                ></textarea>
+              </div>
+
+              <div className="d-grid">
+                <button className="btn btn-primary py-3">Publish now</button>
+              </div>
+            </form>
+          </div>
+
         ) : (
-          <form onSubmit={submitHandler}>
+          <form className="col-lg-6" onSubmit={submitHandler}>
             <div className="mb-4">
               <label htmlFor="product_name" className="form-label">
                 Name
@@ -74,7 +109,7 @@ const CreateCategory = () => {
             </div>
 
             <div className="d-grid">
-              <button className="btn btn-primary py-3">Publish now</button>
+              <button className="btn btn-add py-3">Publish now</button>
             </div>
           </form>
         )}

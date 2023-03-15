@@ -111,7 +111,7 @@ const AddProductMain = () => {
             </Link>
             <h2 className="content-title">Create product</h2>
             <div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-add">
                 Publish now
               </button>
             </div>

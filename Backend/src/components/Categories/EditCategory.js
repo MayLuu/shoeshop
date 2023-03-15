@@ -72,7 +72,7 @@ const EditCategory = (props) => {
         <div className="content-header">
           <h2 className="content-title">Update Category</h2>
           <div>
-            <Link to="/category" className="btn btn-primary">
+            <Link to="/category" className="btn btn-add">
               Create category
             </Link>
           </div>
@@ -87,10 +87,46 @@ const EditCategory = (props) => {
               {loadingUpdate ? (
                 <Loading />
               ) : error ? (
-                <Message variant="alert-danger">{error}</Message>
+                <div className="col-md-12 col-lg-12 d-flex justify-content-center">
+                  <Message variant="alert-danger">{error}</Message>
+
+                  <form className="col-lg-6" onSubmit={submitHandler}>
+                    <div className="mb-4">
+                      <label htmlFor="product_name" className="form-label">
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="Type here"
+                        className="form-control py-3"
+                        id="product_name"
+                        required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                    </div>
+                    <div className="mb-4">
+                      <label className="form-label">Description</label>
+                      <textarea
+                        placeholder="Type here"
+                        className="form-control"
+                        rows="4"
+                        required
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                      ></textarea>
+                    </div>
+
+                    <div className="d-grid">
+                      <button type="submit" className="btn btn-add py-3">
+                        Update now
+                      </button>
+                    </div>
+                  </form>
+                </div>
               ) : (
-                <div className="col-md-12 col-lg-4">
-                  <form onSubmit={submitHandler}>
+                <div className=" d-flex col-md-12 col-lg-12 justify-content-center">
+                  <form className="col-lg-6" onSubmit={submitHandler}>
                     <div className="mb-4">
                       <label htmlFor="product_name" className="form-label">
                         Name

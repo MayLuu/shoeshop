@@ -43,7 +43,7 @@ const Orders = (props) => {
                   </span>
                 ) : (
                   <span className="badge  alert-danger">
-                    Not Paid
+                    UnPaid
                   </span>
                 )}
               </td>

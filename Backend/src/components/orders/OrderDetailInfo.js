@@ -6,26 +6,26 @@ const OrderDetailInfo = (props) => {
     <div className="row mb-5 order-info-wrap">
       <div className="col-md-6 col-lg-4">
         <article className="icontext align-items-start">
-          <span className="icon icon-sm rounded-circle alert-success">
-            <i className="text-success fas fa-user"></i>
+          <span className="">
+
           </span>
-          <div className="text">
-            <h6 className="mb-1">Customer</h6>
-            <p className="mb-1">
-              {order.user.name} <br />
-              <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
+          <div className="text ">
+            <h6 className="mb-1">Customer Info</h6>
+            <p className="mb-1 card-info">
+              Name : {order.user.name} <br />
+              Email : <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
             </p>
           </div>
         </article>
       </div>
       <div className="col-md-6 col-lg-4">
         <article className="icontext align-items-start">
-          <span className="icon icon-sm rounded-circle alert-success">
-            <i className="text-success fas fa-truck-moving"></i>
+          <span className="">
+
           </span>
           <div className="text">
             <h6 className="mb-1">Order info</h6>
-            <p className="mb-1">
+            <p className="mb-1 card-info">
               Shipping: {order.shippingAddress.country} <br /> Pay method:{" "}
               {order.paymentMethod}
             </p>
@@ -34,16 +34,15 @@ const OrderDetailInfo = (props) => {
       </div>
       <div className="col-md-6 col-lg-4">
         <article className="icontext align-items-start">
-          <span className="icon icon-sm rounded-circle alert-success">
-            <i className="text-success fas fa-map-marker-alt"></i>
+          <span className="">
           </span>
           <div className="text">
             <h6 className="mb-1">Deliver to</h6>
-            <p className="mb-1">
-              Address: {order.shippingAddress.city}
+            <p className="mb-1 card-info">
+              City: {order.shippingAddress.city}
               <br />
-              {order.shippingAddress.address}
-              <br /> {order.shippingAddress.postalCode}
+              Address: {order.shippingAddress.address}
+              <br /> Postal code: {order.shippingAddress.postalCode}
             </p>
           </div>
         </article>

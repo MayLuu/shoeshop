@@ -26,9 +26,8 @@ const LatestOrder = (props) => {
                 <td>Date</td>
                 <td>View detail</td>
               </tr>
-              {console.log(orders)}
 
-              {orders.slice(0, 5).map((order, i) => (
+              {orders.slice(0, 10).map((order, i) => (
                 <tr key={order._id}>
                   <td>
                     {i + 1}
