@@ -413,19 +413,39 @@ textarea:focus {
 
 /* LOGIN */
 .login-center {
-  padding: 50px 0;
+  font-family: "work sans";
 }
+.card{
+  box-shadow   : 0 1px 11px rgba(168, 168, 168, 0.27);
+}
+.otherSign{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+}
+.btn-google{
+  text-transform  : uppercase;
+}
 .Login,
 .Login2 {
   background   : #fff;
-  border-radius: 5px;
   position     : relative;
   padding      : 35px 30px 30px;
-  box-shadow   : 0 1px 11px rgba(168, 168, 168, 0.27);
+  
   text-align   : center;
 }
-
+.text-card{
+  font-size: 2.0rem;
+  color: #048ebb;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+.text-otherSign{
+  font-weight: bold;
+  padding-bottom: 10px;
+}
 .Login input {
   width        : 100%;
   padding      : 20px 20px;
@@ -463,6 +483,42 @@ textarea:focus {
 
 .Login p a {
   color: #7a7a7a;
+}
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  display: table;
+  clear: both;
+}
+
+.tab-group li a {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s ease;
+    
+  }
+.tab-group li :hover {
+  text-decoration: underline;
+  color: rgb(37, 73, 231);
+}
+.tab-group li a active {
+    background: rgb(54, 54, 228);
+    color: white;
+  }
+
+
+.tab-content > div:last-child {
+  display: none;
 }
 
 /* PROFILE */
