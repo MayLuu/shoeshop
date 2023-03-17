@@ -39,7 +39,7 @@ const ShopSection = () => {
 
   // Search product
   // eslint-disable-next-line array-callback-return
-  const searchProducts = Object.values(products).filter((product) => {
+  const searchProducts = products?.filter((product) => {
     if (searchProduct === "") {
       return product;
     } else if (
@@ -129,7 +129,7 @@ const ShopSection = () => {
                         onChange={handleCategoryChange}
                       >
                         <option value="">Select a category</option>
-                        {Object.values(categories).map((category) => (
+                        {categories.map((category) => (
                           <option value={category._id} key={category._id}>
                             {category.name}
                           </option>
