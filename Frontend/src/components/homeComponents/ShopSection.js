@@ -39,7 +39,7 @@ const ShopSection = () => {
 
   // Search product
   // eslint-disable-next-line array-callback-return
-  const searchProducts = products?.filter((product) => {
+  const searchProducts = products.filter((product) => {
     if (searchProduct === "") {
       return product;
     } else if (
