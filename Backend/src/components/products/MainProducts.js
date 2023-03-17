@@ -31,7 +31,8 @@ const MainProducts = () => {
     "Price: hight -> low",
   ]);
   const [selectedSort, setSelectedSort] = useState();
-
+  //searchPros
+  const [searchPros, setSearchPros] = useState([])
   useEffect(() => {
     dispatch(lisProducts());
     dispatch(lisCategories());
@@ -39,11 +40,16 @@ const MainProducts = () => {
 
   // Search product
   const searchProducts = products?.filter((product) => {
+
     if (searchProduct === "") {
       return product;
+
+
     } else if (
-      product.name.toLowerCase().includes(searchProduct.toLowerCase())
+      searchPros.filter((p => p.name.toLowerCase() == product.name.toLowerCase())).map(p => p).length > 0
     ) {
+      console.log(product.name.includes(searchPros.filter((p => p.name.toLowerCase()))))
+      console.log('in')
       return product;
     }
   });
@@ -87,7 +93,20 @@ const MainProducts = () => {
       return filterList?.sort((a, b) => (a.price > b.price ? -1 : 1));
     }
   };
+  const sendData = (e) => {
 
+    fetch('/api/products/getProducts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ payload: e })
+    }).then(res => res.json()).then(data => {
+      let payload = data.payload;
+      console.log('res:');
+      console.log(payload);
+      setSearchPros(payload);
+      setSearchProduct(e)
+    })
+  };
   const sortList = useMemo(getSortList, [selectedSort, filterList]);
 
   return (
@@ -109,8 +128,8 @@ const MainProducts = () => {
                 type="search"
                 placeholder="Search..."
                 className="form-control search-control p-2"
-
-                onChange={(e) => setSearchProduct(e.target.value)}
+                onChange={(e) => sendData(e.target.value)}
+              // onChange={(e) => setSearchProduct(e.target.value)}
               />
             </div>
             <div className="col-lg-2 col-6 col-md-3">

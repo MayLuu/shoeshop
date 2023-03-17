@@ -40,6 +40,11 @@ productRouter.get(
 );
 
 // Product review
+productRouter.post('/getProducts', async (req, res) => {
+    let payload = req.body.payload;
+    let search = await Product.find({ name: { $regex: new RegExp('^' + payload + ".*", 'i') } }).exec();
+    res.send({ payload: search })
+})
 productRouter.post(
     "/:id/review",
     protect,
