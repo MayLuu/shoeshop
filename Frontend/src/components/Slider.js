@@ -30,7 +30,7 @@ function Slider() {
                   manufactures shoes, clothing and accessories.
                 </h3>
                 <Link to="https://www.nike.com/vn">
-                  <button className="btn btn-danger m-5">Decovery</button>
+                  <button className="btn btn-danger m-5">Discovery</button>
                 </Link>
               </div>
             </div>
@@ -52,7 +52,7 @@ function Slider() {
                   manufactures shoes, clothing and accessories.
                 </h3>
                 <Link to="https://www.adidas.com.vn/vi">
-                  <button className="btn btn-danger m-5">Decovery</button>
+                  <button className="btn btn-danger m-5">Discovery</button>
                 </Link>
               </div>
             </div>
@@ -74,7 +74,7 @@ function Slider() {
                   accessories.
                 </h3>
                 <Link to="https://www.adidas.com.vn/vi">
-                  <button className="btn btn-danger m-5">Decovery</button>
+                  <button className="btn btn-danger m-5">Discovery</button>
                 </Link>
               </div>
             </div>
