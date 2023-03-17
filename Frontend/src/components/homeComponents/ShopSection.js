@@ -107,53 +107,51 @@ const ShopSection = () => {
         <div className="section">
           <div className="row">
             <div className="col-lg-12 col-md-12">
-              <div className="card mb-4 shadow-sm mx-3">
-                <header className="card-header gradient">
-                  <div className="row gx-3 py-3">
-                    <div className="col-lg-4 col-md-6 me-auto py-1">
-                      <input
-                        type="search"
-                        placeholder="Search..."
-                        className="form-control"
-                        onChange={(e) => setSearchProduct(e.target.value)}
-                      />
-                    </div>
-                    <div className="col-lg-3 col-md-3 py-1">
-                      {loadingList ? (
-                        <Loading />
-                      ) : errorList ? (
-                        <Message variant="alert-danger">{errorList}</Message>
-                      ) : (
-                        <select
-                          name="category"
-                          className="form-select"
-                          onChange={handleCategoryChange}
-                        >
-                          <option value="">Select a category</option>
-                          {categories.map((category) => (
-                            <option value={category._id} key={category._id}>
-                              {category.name}
-                            </option>
-                          ))}
-                        </select>
-                      )}
-                    </div>
-                    <div className="col-lg-2 col-md-3 py-1">
+              <div className="mb-4 mx-3">
+                <div className="row gx-3 py-3">
+                  <div className="col-lg-4 col-md-6 me-auto py-1">
+                    <input
+                      type="search"
+                      placeholder="Search..."
+                      className="form-control"
+                      onChange={(e) => setSearchProduct(e.target.value)}
+                    />
+                  </div>
+                  <div className="col-lg-3 col-md-3 py-1">
+                    {loadingList ? (
+                      <Loading />
+                    ) : errorList ? (
+                      <Message variant="alert-danger">{errorList}</Message>
+                    ) : (
                       <select
-                        name="sort"
+                        name="category"
                         className="form-select"
-                        onChange={handleSortChange}
+                        onChange={handleCategoryChange}
                       >
-                        <option value="">Select a sort</option>
-                        {sortName.map((name) => (
-                          <option value={name} key={name}>
-                            {name}
+                        <option value="">Select a category</option>
+                        {categories.map((category) => (
+                          <option value={category._id} key={category._id}>
+                            {category.name}
                           </option>
                         ))}
                       </select>
-                    </div>
+                    )}
                   </div>
-                </header>
+                  <div className="col-lg-2 col-md-3 py-1">
+                    <select
+                      name="sort"
+                      className="form-select"
+                      onChange={handleSortChange}
+                    >
+                      <option value="">Select a sort</option>
+                      {sortName.map((name) => (
+                        <option value={name} key={name}>
+                          {name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="col-lg-12 col-md-12 article">
@@ -197,7 +195,9 @@ const ShopSection = () => {
                               value={product.rating}
                               text={`${product.numReviews} reviews`}
                             />
-                            <h3>${product.price}</h3>
+                            <div>
+                              <h3>${product.price}</h3>
+                            </div>
                           </div>
                         </div>
                       </div>

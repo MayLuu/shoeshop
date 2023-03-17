@@ -21,7 +21,7 @@ const Header = () => {
       {/* Top Header */}
 
       {/* Header */}
-      <div className="header">
+      <div className="header" style={{backgroundColor: "#ffff"}}>
         <div className="container">
           {/* MOBILE HEADER */}
           <div className="mobile-header">
@@ -36,6 +36,7 @@ const Header = () => {
 
                 </div>
                 <div className="col-6 d-flex align-items-center justify-content-end Login-Register">
+
                   {userInfo ? (
                     <div className="btn-group">
                       <button
@@ -100,6 +101,10 @@ const Header = () => {
               </div>
               <div className="col-md-6 col-8 d-flex align-items-center"></div>
               <div className="col-md-3 d-flex align-items-center justify-content-end Login-Register">
+              <Link to="/cart">
+                  <i className="fas fa-shopping-bag"></i>
+                  <span className="badge">{cartItems.length}</span>
+                </Link>
                 {userInfo ? (
                   <div className="btn-group">
                     <button
@@ -109,7 +114,7 @@ const Header = () => {
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      Hi, {userInfo.name}
+                      <i className="fas fa-user px-2"></i>
                     </button>
                     <div className="dropdown-menu">
                       <Link className="dropdown-item" to="/profile">
@@ -129,11 +134,7 @@ const Header = () => {
                     <Link to="/Register">Register</Link>
                     <Link to="/login">Login</Link>
                   </>
-                )}
-                <Link to="/cart">
-                  <i className="fas fa-shopping-bag"></i>
-                  <span className="badge">{cartItems.length}</span>
-                </Link>
+                )}                
               </div>
             </div>
           </div>
