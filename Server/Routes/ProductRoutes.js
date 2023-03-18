@@ -2,7 +2,7 @@ import express from "express";
 import asyncHandler from "express-async-handler";
 import Product from "../Models/ProductModel.js";
 import { admin, protect } from "./../Middleware/AuthMiddleware.js";
-
+import Order from "../Models/OrderModel.js"
 const productRouter = express.Router();
 
 // Get all product
@@ -52,12 +52,14 @@ productRouter.post(
     asyncHandler(async (req, res) => {
         const { rating, comment } = req.body;
         const product = await Product.findById(req.params.id);
-
         if (product) {
-            const alreadyReviewed = product.reviews.find(
-                (r) => r.user.toString() === req.user._id.toString()
-            );
+            //already order
+
             if (alreadyReviewed) {
+
+                const alreadyReviewed = product.reviews.find(
+                    (r) => r.user.toString() === req.user._id.toString()
+                );
                 res.status(400);
                 throw new Error("Product already Reviewed");
             }
