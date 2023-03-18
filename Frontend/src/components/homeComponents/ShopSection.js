@@ -30,6 +30,7 @@ const ShopSection = () => {
   const [selectedSort, setSelectedSort] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(9);
+  const [searchPros, setSearchPros] = useState([])
 
   useEffect(() => {
     dispatch(listProduct());
@@ -43,7 +44,9 @@ const ShopSection = () => {
     if (searchProduct === "") {
       return product;
     } else if (
-      product.name.toLowerCase().includes(searchProduct.toLowerCase())
+      // product.name.toLowerCase().includes(searchProduct.toLowerCase())
+      searchPros.filter((p => p.name.toLowerCase() == product.name.toLowerCase())).map(p => p).length > 0
+
     ) {
       return product;
     }
@@ -87,7 +90,20 @@ const ShopSection = () => {
       return filterList?.sort((a, b) => (a.price > b.price ? -1 : 1));
     }
   };
+  const sendData = (e) => {
 
+    fetch('/api/products/getProducts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ payload: e })
+    }).then(res => res.json()).then(data => {
+      let payload = data.payload;
+      console.log('res:');
+      console.log(payload);
+      setSearchPros(payload);
+      setSearchProduct(e)
+    })
+  };
   const sortList = useMemo(getSortList, [selectedSort, filterList]);
 
   // Pagination
@@ -114,7 +130,7 @@ const ShopSection = () => {
                       type="search"
                       placeholder="Search..."
                       className="form-control"
-                      onChange={(e) => setSearchProduct(e.target.value)}
+                      onChange={(e) => sendData(e.target.value)}
                     />
                   </div>
                   <div className="col-lg-3 col-md-3 py-1">

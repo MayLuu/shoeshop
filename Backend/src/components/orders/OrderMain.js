@@ -23,13 +23,13 @@ const OrderMain = () => {
     "Date: oldest",
   ]);
   const [selectedSort, setSelectedSort] = useState();
-
   // Search product
   const searchOrders = orders?.filter((order) => {
     if (searchOrder === "") {
       return order;
     } else if (
       order.user.name.toLowerCase().includes(searchOrder.toLowerCase())
+
     ) {
       return order;
     }

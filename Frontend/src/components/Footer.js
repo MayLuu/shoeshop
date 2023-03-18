@@ -4,6 +4,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="justify-content-center d-flex">
+
         <div className="card-name">
           <img
             alt="mastercard"
@@ -19,7 +20,7 @@ const Footer = () => {
         <div className="card-name">
           <img
             alt="paypal"
-            src="https://pbs.twimg.com/media/EfTZlEnWAAMn1lX.png"
+            src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404__480.png"
           />
         </div>
         <div className="card-name">
